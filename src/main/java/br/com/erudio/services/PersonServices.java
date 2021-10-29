@@ -4,6 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+<<<<<<< HEAD
+=======
+import org.springframework.transaction.annotation.Transactional;
+>>>>>>> 427b171 (Implementando Suporte ao Cors)
 
 import br.com.erudio.converter.DozerConverter;
 import br.com.erudio.data.model.Person;
@@ -47,6 +51,17 @@ public class PersonServices {
 		return vo;
 	}	
 	
+<<<<<<< HEAD
+=======
+	@Transactional
+	public PersonVO disablePerson(Long id) {
+		repository.disablePersons(id);			
+		var entity = repository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
+		return DozerConverter.parseObject(entity, PersonVO.class);
+	}
+	
+>>>>>>> 427b171 (Implementando Suporte ao Cors)
 	public void delete(Long id) {
 		Person entity = repository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));

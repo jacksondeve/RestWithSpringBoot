@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.PatchMapping;
+>>>>>>> 427b171 (Implementando Suporte ao Cors)
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -21,7 +25,10 @@ import br.com.erudio.services.PersonServices;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+<<<<<<< HEAD
 //@Api(value = "PersonEndpoint", description = "REST API for Person", tags = { "PersonEndpoint" })
+=======
+>>>>>>> 427b171 (Implementando Suporte ao Cors)
 @Api(tags = "PersonEndpoint")
 @RestController
 @RequestMapping("/api/person/v1")
@@ -69,6 +76,18 @@ public class PersonController {
 		return personVO;
 	}	
 	
+<<<<<<< HEAD
+=======
+	
+	@ApiOperation(value = "Disable a specific person by your ID" )
+	@PatchMapping(value = "/{id}", produces = { "application/json", "application/xml", "application/x-yaml" })
+	public PersonVO disablePerson(@PathVariable("id") Long id) {
+		PersonVO personVO = service.disablePerson(id);
+		personVO.add(linkTo(methodOn(PersonController.class).findById(id)).withSelfRel());
+		return personVO;
+	}	
+	
+>>>>>>> 427b171 (Implementando Suporte ao Cors)
 	@ApiOperation(value = "Delete a specific person by your ID")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") Long id) {

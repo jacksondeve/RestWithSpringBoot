@@ -23,7 +23,11 @@ import io.swagger.annotations.ApiOperation;
 
 @Api(tags = "BookEndpoint") 
 @RestController
+<<<<<<< HEAD
 @RequestMapping("/api/book/v1")
+=======
+@RequestMapping("/api/books/v1")
+>>>>>>> 427b171 (Implementando Suporte ao Cors)
 public class BookController {
 	
 	@Autowired

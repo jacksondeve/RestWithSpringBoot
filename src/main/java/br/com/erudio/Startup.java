@@ -12,5 +12,12 @@ public class Startup {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Startup.class, args);
+<<<<<<< HEAD
+=======
+		
+		/*BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(16);
+		String result = bCryptPasswordEncoder.encode("admin123");
+		System.out.println("My hash " + result);*/
+>>>>>>> 427b171 (Implementando Suporte ao Cors)
 	}
 }
